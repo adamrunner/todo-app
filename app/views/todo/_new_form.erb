@@ -1,0 +1,12 @@
+<%= form_for @todo, url: {action: "create"}, remote:true do |f| %>
+  <label for="title">Title</label>
+  <input name='title' type='text' id='title' />
+  <br />
+  <label for="note">Note</label>
+  <input name='note' type='text' id='note' />
+  <br />
+  <label for="due_date">Due Date</label>
+  <input name='due_date' type='datetime-local' id='due_date' />
+  <br />
+  <button type="submit" value="Create">Create</button>
+<% end %>

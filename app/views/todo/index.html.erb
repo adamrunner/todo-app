@@ -1,0 +1,7 @@
+<ul id="todo-list">
+<% @todos.each do |todo| %>
+  <li> <%= link_to todo.title, todo_path(todo), class:'index-linker', remote: true %> </li>
+<% end %>
+</ul>
+
+<%= link_to 'Create New', new_todo_path, remote: true %>
