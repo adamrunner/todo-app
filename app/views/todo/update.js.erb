@@ -1,0 +1,2 @@
+$('#<%= todo_id(@todo) %>').replaceWith("<%= j(render partial:'todo', object:@todo) %>")
+$('.content').html("<%= j(render partial: 'todo_details', locals: { items: @todo } ) %>")

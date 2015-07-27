@@ -13,12 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-// $(function(){
-//   $('.index-linker').click(function(e){
-//     e.preventDefault();
-//     //ajax stuff here
-//     var url = e.currentTarget.href
-//     $.get(url)
-//   });
-// });

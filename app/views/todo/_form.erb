@@ -1,4 +1,4 @@
-<%= form_for(TodoItem.new, remote: true, url:todo_index_path) do |f| %>
+<%= form_for(@todo, remote: true, url:todo_path(@todo)) do |f| %>
   <%= f.label(:title) %>
   <%= f.text_field(:title) %>
   <br>

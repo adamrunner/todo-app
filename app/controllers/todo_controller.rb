@@ -11,6 +11,19 @@ class TodoController < ApplicationController
     @todo = TodoItem.new
   end
 
+  def edit
+    @todo = TodoItem.find(params[:id])
+  end
+
+  def update
+    @todo = TodoItem.find(params[:id])
+    @todo.title    = todo_params[:title]
+    @todo.note     = todo_params[:note]
+    @todo.due_date = todo_params[:due_date]
+    @todo.save
+
+  end
+
   def create
     @todo = TodoItem.create(todo_params)
     # redirect_to root_path, flash: {notice: "Item Created"}
@@ -23,6 +36,6 @@ class TodoController < ApplicationController
   private
 
   def todo_params
-    params.permit('title', 'note', 'due_date')
+    params.require('todo_item').permit('title', 'note', 'due_date')
   end
 end

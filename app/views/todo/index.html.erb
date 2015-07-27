@@ -1,6 +1,6 @@
 <ul id="todo-list">
 <% @todos.each do |todo| %>
-  <li id="<%= todo_id(todo) %>"> <%= link_to todo.title, todo_path(todo), class:'index-linker', remote: true %> </li>
+  <%= render partial: 'todo', object: todo %>
 <% end %>
 </ul>
 
