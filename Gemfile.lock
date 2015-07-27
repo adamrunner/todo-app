@@ -52,6 +52,8 @@ GEM
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    jbuilder (0.9.1)
+      activesupport (>= 3.0.0)
     jquery-rails (4.0.4)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -65,6 +67,7 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pry (0.10.1)
@@ -135,7 +138,9 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails
+  jbuilder
   jquery-rails
+  multi_json
   pry-rails
   rails (= 4.2.1)
   rails-backbone
