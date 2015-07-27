@@ -16,9 +16,8 @@ class TodoController < ApplicationController
     # redirect_to root_path, flash: {notice: "Item Created"}
   end
 
-  def delete
+  def destroy
     @todo = TodoItem.find(params[:id]).destroy
-    redirect_to root_path, flash: {notice: "Item Removed"}
   end
 
   private
