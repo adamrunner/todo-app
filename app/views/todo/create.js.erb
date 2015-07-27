@@ -1,2 +1,2 @@
-$("#todo-list").append('<li> <%= escape_javascript(link_to @todo.title, todo_path(@todo), remote: true) %> </li>')
+$("#todo-list").append('<%= j(render partial: "todo", object:@todo) %>')
 $("#new_todo_item")[0].reset()
