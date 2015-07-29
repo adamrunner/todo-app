@@ -1,5 +1,11 @@
 class TodoApp.Models.TodoItem extends Backbone.Model
   paramRoot: 'todo_item'
+  url: () ->
+    @base = "/todo/"
+    if undefined == this.id
+      return @base
+    else
+      return "#{@base}#{this.id}"
 
   defaults:
     title: null

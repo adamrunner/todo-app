@@ -1,7 +1,8 @@
-<ul id="todo-list">
-<% @todos.each do |todo| %>
-  <%= render partial: 'todo', object: todo %>
-<% end %>
-</ul>
-
-<%= link_to 'Create New', new_todo_path, remote: true %>
+<div id="todo_items"></div>
+<script type="text/javascript">
+  $(function() {
+    // TodoApp is the app name
+    window.router = new TodoApp.Routers.TodoItemsRouter({todo_items: <%= @todos.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>

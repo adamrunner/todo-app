@@ -1,0 +1,15 @@
+<p>
+  <b>Title:</b>
+  <%= title %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= note %>
+</p>
+<p>
+  <strong>Due Date</strong>
+  <%= moment(due_date, "YYYY-MM-DDTHH:mm:ss").format('MMMM Do YYYY, h:mm:ss a') %>
+</p>
+
+<a href="#/index">Back</a>
