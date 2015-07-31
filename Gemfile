@@ -14,6 +14,7 @@ gem 'momentjs-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'bootstrap-sass', '~> 3.3.5'
   gem 'sass-rails'
   gem 'coffee-rails'
 
