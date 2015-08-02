@@ -1,25 +1,46 @@
-<h1>New Todo Item</h1>
+<li class="list-group-item">
+  <div class="row">
+    <div class="col-xs-12">
+      <form id="new-todo" name="todo">
+        <div class="row">
+          <div class="col-xs-4">
+            <label for="title">title: </label>
+          </div>
+          <div class="col-xs-8">
+            <input type="text" name="title" id="title"  class="form-control">
+          </div>
+        </div>
 
-<form id="new-todo" name="todo">
-  <div class="field">
-    <label for="title">title: </label>
-    <input type="text" name="title" id="title" >
+        <div class="row">
+          <div class="col-xs-4">
+            <label for="note">note: </label>
+          </div>
+          <div class="col-xs-8">
+            <input type="text" name="note" id="note" class="form-control">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <label for="due_date">due date: </label>
+          </div>
+          <div class="col-xs-8">
+            <input type="datetime-local" name="due_date" id="due_date" class="form-control">
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="row">
+            <div class="col-xs-4">
+              <a href="#index" class="btn btn-primary">Back</a>
+            </div>
+            <div class="col-xs-6">
+              <input type="submit" value="Create Todo Item" class="form-control btn-success"/>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
   </div>
-
-  <div class="field">
-    <label for="note">note: </label>
-    <input type="text" name="note" id="note">
-  </div>
-
-  <div class="field">
-    <label for="due_date">due date: </label>
-    <input type="datetime-local" name="due_date" id="due_date">
-  </div>
-
-  <div class="actions">
-    <input type="submit" value="Create Todo Item" />
-  </div>
-
-</form>
-
-<a href="#index">Back</a>
+</li>

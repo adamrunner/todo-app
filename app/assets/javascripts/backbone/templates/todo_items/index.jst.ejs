@@ -1,24 +1,2 @@
-<table>
-  <tbody>
-    <tr>
-     <th>Title</th>
-     <th>Note</th>
-     <th>Due Date</th>
-     <th></th>
-     <th></th>
-    </tr>
-    <% collection.forEach(function(item){ %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.note %></td>
-        <td><%= item.due_date %></td>
-
-        <td><a href="#/<%= item.id %>" data-id='<%= item.id %>'>Show</td>
-        <td><a href="#/<%= item.id %>/edit" data-id='<%= item.id %>'>Edit</td>
-        <td><a href="#/<%= item.id %>/destroy" class="destroy" data-id='<%= item.id %>'>Destroy</a></td>
-      </tr>
-    <% }) %>
-  </tbody>
-</table>
-
-<a href="#new">New Todo Item</a>
+<ul class="list-group todo-list">
+</ul>

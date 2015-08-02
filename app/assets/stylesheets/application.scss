@@ -1,3 +1,21 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.action-items {
+  right: -120%;
+  transition: right 100ms ease;
+  &.active{
+    right:0;
+  }
+}
+.actionable {
+  overflow: hidden;
+}
+.actions-display {
+  &:link, &:active, &:hover{
+    text-decoration: none;
+  }
+}
+form .row {
+  margin-bottom: 1em;
+}

@@ -7,7 +7,7 @@ class TodoApp.Views.TodoItems.NewView extends Backbone.View
     @render()
 
   render: ->
-    @$el.html @template
+    @$el.prepend @template
     @
   save: (e) ->
     e.preventDefault()
@@ -15,8 +15,7 @@ class TodoApp.Views.TodoItems.NewView extends Backbone.View
     title    = $('#title').val()
     note     = $('#note').val()
     due_date = $('#due_date').val()
-    model    = new TodoApp.Models.TodoItem({title: title, note: note, due_date: due_date})
-    @collection.create model,
+    @collection.create {title: title, note: note, due_date: due_date},
+      wait: true,
       success: (todo) ->
-        @model = todo
-        window.location.hash = "/#{@model.id}"
+        window.router.navigate("index", {trigger:true})

@@ -6,22 +6,25 @@ class TodoApp.Views.TodoItems.EditView extends Backbone.View
   events:
     'submit #new-todo' : 'save'
   initialize: ->
-    @model = new TodoApp.Models.TodoItem({id: @id})
-    @model.fetch()
-    @listenTo(@model, 'change', @render)
+    @$element = $("#todo_item_#{@id}")
+    @model    = new TodoApp.Models.TodoItem({id: @id})
+    @model.fetch({
+      success: => @render()
+    })
 
   render: ->
-    console.log('edit view render called')
-    @$el.html @template(@model.toJSON())
+    @$element.html @template(@model.toJSON())
     @
 
   save: (e) ->
     e.preventDefault()
     e.stopPropagation()
-    title = $('#title').val()
-    note = $('#note').val()
+    title    = $('#title').val()
+    note     = $('#note').val()
     due_date = $('#due_date').val()
     @model.save({title: title, note: note, due_date: due_date},
-      success: (todo) ->
-        @model = todo
-        window.location.hash = "/#{@model.id}")
+      success: (todo) =>
+        @remove()
+        $('#app_container').append("<div id='todo_items'></div>")
+        window.router.navigate("index", {trigger:true})
+        )

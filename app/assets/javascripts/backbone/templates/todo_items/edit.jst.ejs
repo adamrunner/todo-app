@@ -1,25 +1,44 @@
-<h1>Edit Todo Item</h1>
+<div class="row">
+  <div class="col-xs-12">
+    <form id="new-todo" name="todo">
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="title">title: </label>
+        </div>
+        <div class="col-xs-8">
+          <input type="text" name="title" id="title"  class="form-control" value="<%= title %>">
+        </div>
+      </div>
 
-<form id="new-todo" name="todo">
-  <div class="field">
-    <label for="title"> title:</label>
-    <input type="text" name="title" id="title" value="<%= title %>">
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="note">note: </label>
+        </div>
+        <div class="col-xs-8">
+          <input type="text" name="note" id="note" class="form-control" value="<%= note %>">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="due_date">due date: </label>
+        </div>
+        <div class="col-xs-8">
+          <input type="datetime-local" name="due_date" id="due_date" class="form-control" value="<%= due_date %>">
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="row">
+          <div class="col-xs-4">
+            <a href="#index" class="btn btn-primary">Back</a>
+          </div>
+          <div class="col-xs-6">
+            <input type="submit" value="Update Todo Item" class="form-control btn-success"/>
+          </div>
+        </div>
+      </div>
+
+    </form>
   </div>
-
-  <div class="field">
-    <label for="note"> note:</label>
-    <input type="text" name="note" id="note" value="<%= note %>">
-  </div>
-
-  <div class="field">
-    <label for="due_date"> due date:</label>
-    <input type="datetime-local" name="due_date" id="due_date" value="<%= due_date %>">
-  </div>
-
-  <div class="actions">
-    <input type="submit" value="Update Todo Item" />
-  </div>
-
-</form>
-
-<a href="#index">Back</a>
+</div>

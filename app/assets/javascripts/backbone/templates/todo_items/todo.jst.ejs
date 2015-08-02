@@ -1,0 +1,16 @@
+<li class="list-group-item actionable" id="todo_item_<%= id %>">
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="#" class="actions-display" data-id="todo_item_<%= id %>">
+        <h4 class="list-group-item-heading"><%= title %></h4>
+      </a>
+    </div>
+    <div class="col-xs-6">
+      <div class="action-items btn-group btn-group-lg">
+        <a class="btn btn-default" href="#/<%= id %>" data-id='<%= id %>'><span class="glyphicon glyphicon-eye-open"></span></a>
+        <a class="btn btn-default" href="#/<%= id %>/edit" data-id='<%= id %>'><span class="glyphicon glyphicon-edit"></span></a>
+        <a class="btn btn-danger destroy" href="#/<%= id %>/destroy" data-id='<%= id %>'><span class="glyphicon glyphicon-trash"></span></a>
+      </div>
+    </div>
+  </div>
+</li>
