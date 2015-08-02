@@ -20,7 +20,6 @@ class TodoController < ApplicationController
     @todo.title    = todo_params[:title]
     @todo.note     = todo_params[:note]
     @todo.due_date = todo_params[:due_date]
-    binding.pry
     @todo.save
 
   end
