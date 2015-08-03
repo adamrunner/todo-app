@@ -12,7 +12,7 @@ class TodoApp.Views.TodoItems.IndexView extends Backbone.View
     @listenTo(@collection, 'update', @render)
     @collection.reset()
     @collection.fetch()
-    @render
+    @render()
 
   render: ->
     @$el.html(@template({collection: @collection.toJSON()}))
@@ -29,6 +29,7 @@ class TodoApp.Views.TodoItems.IndexView extends Backbone.View
     model.destroy(
       success: (model, response, options) ->
         element.remove()
+        window.router.navigate('index', {trigger: true})
     )
 
   showActions: (e) ->
