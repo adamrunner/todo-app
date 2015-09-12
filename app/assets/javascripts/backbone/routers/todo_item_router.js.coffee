@@ -1,7 +1,7 @@
 class TodoApp.Routers.TodoItemsRouter extends Backbone.Router
   initialize: (options) ->
-    @todos = new TodoApp.Collections.TodoItemsCollection()
-    @todos.reset options.todos
+    @todos = new TodoApp.Collections.TodoItemsCollection(options.todo_items)
+    # @todos.reset options.todos
   routes:
     "index"    : "index"
     "new"      : "newPost"
@@ -15,7 +15,6 @@ class TodoApp.Routers.TodoItemsRouter extends Backbone.Router
     @view = new TodoApp.Views.TodoItems.NewView({collection: @todos})
 
   show: (id) ->
-    @todos.fetch()
     @view = new TodoApp.Views.TodoItems.ShowView({collection: @todos, id: id})
 
   edit: (id) ->

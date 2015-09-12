@@ -4,7 +4,7 @@ class TodoApp.Views.TodoItems.TodoView extends Backbone.View
   initialize: (options) ->
     @item = options.item
   render: () ->
-    @$el.append(@template(@item.toJSON()))
+    @$el.append(@template(@item.attributes))
     @
   outputTemplate: () ->
-    @template(@item.toJSON())
+    @template(@item.attributes)

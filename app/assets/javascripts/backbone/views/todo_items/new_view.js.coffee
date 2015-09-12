@@ -1,6 +1,6 @@
 class TodoApp.Views.TodoItems.NewView extends Backbone.View
   template: JST["backbone/templates/todo_items/new"]
-  el: '#todo_items'
+  el: '#todo-list'
   events:
     'submit #new-todo' : 'save'
   initialize: ->

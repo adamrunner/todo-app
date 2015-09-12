@@ -10,12 +10,12 @@ class TodoApp.Views.TodoItems.IndexView extends Backbone.View
 
   initialize: ->
     @listenTo(@collection, 'update', @render)
-    @collection.reset()
-    @collection.fetch()
+    # @collection.reset()
+    # @collection.fetch()
     @render()
 
   render: ->
-    @$el.html(@template({collection: @collection.toJSON()}))
+    @$el.html(@template({collection: @collection}))
     @collection.forEach (item) ->
       item_view = new TodoApp.Views.TodoItems.TodoView({item: item})
       item_view.render()
