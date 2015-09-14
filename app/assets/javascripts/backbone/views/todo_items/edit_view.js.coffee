@@ -2,18 +2,15 @@ TodoApp.Views.TodoItems ||= {}
 
 class TodoApp.Views.TodoItems.EditView extends Backbone.View
   template: JST["backbone/templates/todo_items/edit"]
-  el: '#todo_items'
   events:
-    'submit #new-todo' : 'save'
+    'submit #edit-todo' : 'save'
   initialize: ->
-    @$element = $("#todo_item_#{@id}")
-    @model    = new TodoApp.Models.TodoItem({id: @id})
-    @model.fetch({
-      success: => @render()
-    })
+    @setElement("#todo_item_#{@id}")
+    @model = @collection.get(@id)
+    @render()
 
   render: ->
-    @$element.html @template(@model.toJSON())
+    @$el.html @template(@model.attributes)
     @
 
   save: (e) ->
@@ -25,6 +22,5 @@ class TodoApp.Views.TodoItems.EditView extends Backbone.View
     @model.save({title: title, note: note, due_date: due_date},
       success: (todo) =>
         @remove()
-        $('#app_container').append("<div id='todo_items'></div>")
         window.router.navigate("index", {trigger:true})
-        )
+    )

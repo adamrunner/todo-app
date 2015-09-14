@@ -3,15 +3,12 @@ TodoApp.Views.TodoItems ||= {}
 class TodoApp.Views.TodoItems.IndexView extends Backbone.View
   template: JST["backbone/templates/todo_items/index"]
   events:
-    "click .destroy" : "destroy"
     "click .actions-display" : "showActions"
 
   el: '#todo_items'
 
   initialize: ->
     @listenTo(@collection, 'update', @render)
-    # @collection.reset()
-    # @collection.fetch()
     @render()
 
   render: ->
