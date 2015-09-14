@@ -1,17 +1,21 @@
 class TodoApp.Views.TodoItems.TodoView extends Backbone.View
   template: JST["backbone/templates/todo_items/todo"]
 
-  el: '.todo-list'
+  tagName: 'li'
+  className: 'list-group-item actionable'
+
   initialize: (options) ->
+    @$el.attr('id', "todo_item_#{@model.id}")
     @li_id = "#todo_item_#{@model.id}"
     events = {
-      "click #{@li_id} .destroy" : "destroy"
-      "click #{@li_id} .actions-display" : "showActions"
+      "click .destroy" : "destroy"
+      "click .actions-display" : "showActions"
     }
     @delegateEvents(events)
+    @render()
 
   render: () ->
-    @$el.append(@template(@model.attributes))
+    @$el.html(@template(@model.attributes))
     @
 
   outputTemplate: () ->
@@ -20,12 +24,14 @@ class TodoApp.Views.TodoItems.TodoView extends Backbone.View
   showActions: (e) ->
     e.preventDefault()
     $(".active").removeClass("active")
-    li_element = $("#{@li_id}")
-    li_element.find(".action-items").addClass("active")
+    @$(".action-items").addClass("active")
+
+  handleRemove: () =>
+    @remove()
 
   destroy: (e) ->
+    e.preventDefault()
     @model.destroy(
       success: (model, response, options) =>
-        @remove()
-        window.router.navigate('index', {trigger: true})
+        @$el.velocity('transition.bounceOut', {complete: @handleRemove})
     )
