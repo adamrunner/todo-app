@@ -3,15 +3,12 @@ class TodoApp.Views.TodoItems.TodoView extends Backbone.View
 
   tagName: 'li'
   className: 'list-group-item actionable'
+  events:
+    "click .destroy" : "destroy"
+    "click .actions-display" : "showActions"
 
   initialize: (options) ->
     @$el.attr('id', "todo_item_#{@model.id}")
-    @li_id = "#todo_item_#{@model.id}"
-    events = {
-      "click .destroy" : "destroy"
-      "click .actions-display" : "showActions"
-    }
-    @delegateEvents(events)
     @render()
 
   render: () ->
@@ -23,8 +20,8 @@ class TodoApp.Views.TodoItems.TodoView extends Backbone.View
 
   showActions: (e) ->
     e.preventDefault()
-    $(".active").removeClass("active")
-    @$(".action-items").addClass("active")
+    $(".selected.action-items").removeClass('selected').velocity('transition.slideUpOut',{duration: 200})
+    @$('.action-items').addClass("selected").velocity('transition.slideDownIn', {duration: 200})
 
   handleRemove: () =>
     @remove()
@@ -33,5 +30,5 @@ class TodoApp.Views.TodoItems.TodoView extends Backbone.View
     e.preventDefault()
     @model.destroy(
       success: (model, response, options) =>
-        @$el.velocity('transition.bounceOut', {complete: @handleRemove})
+        @$el.velocity('transition.slideUpOut', {complete: @handleRemove, duration: 250})
     )

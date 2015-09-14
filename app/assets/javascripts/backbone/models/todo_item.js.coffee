@@ -15,3 +15,4 @@ class TodoApp.Models.TodoItem extends Backbone.Model
 class TodoApp.Collections.TodoItemsCollection extends Backbone.Collection
   model: TodoApp.Models.TodoItem
   url: '/todo'
+  comparator: 'due_date'
