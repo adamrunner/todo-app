@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require velocity.min.js
+//= require velocity.ui.min.js
 //= require moment
 //= require underscore
 //= require backbone
