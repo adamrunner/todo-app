@@ -1,6 +1,6 @@
 class TodoController < ApplicationController
   def index
-    @todos = TodoItem.all
+    @todos = TodoItem.order(:due_date).all
   end
 
   def show
@@ -16,7 +16,7 @@ class TodoController < ApplicationController
   end
 
   def update
-    @todo = TodoItem.find(params[:id])
+    @todo = TodoItem.find(todo_params[:id])
     @todo.title    = todo_params[:title]
     @todo.note     = todo_params[:note]
     @todo.due_date = todo_params[:due_date]
@@ -36,6 +36,6 @@ class TodoController < ApplicationController
   private
 
   def todo_params
-    params.require('todo_item').permit('title', 'note', 'due_date')
+    params.require('todo_item').permit('id', 'title', 'note', 'due_date')
   end
 end

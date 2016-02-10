@@ -6,11 +6,15 @@ gem 'rails', '4.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'rails-backbone'
 gem 'pry-rails'
+gem 'jbuilder'
+gem 'multi_json'
+gem 'momentjs-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'bootstrap-sass', '~> 3.3.5'
   gem 'sass-rails'
   gem 'coffee-rails'
 

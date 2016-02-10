@@ -12,4 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require velocity.min.js
+//= require velocity.ui.min.js
+//= require moment
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/todo_app
+//= require bootstrap
 //= require_tree .

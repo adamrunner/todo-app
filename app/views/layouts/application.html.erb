@@ -5,10 +5,21 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+  <div class="container-fluid">
 
-<%= yield %>
-<div id="content" class="content"></div>
+    <div class="col-xs-12 col-md-4 col-md-offset-4" id="app_container">
+      <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">Todo List</a>
+        <ul class="nav navbar-nav">
+          <li><a href="#/new">New Item</a></li>
+        </ul>
+      </nav>
+      <%= yield %>
+    </div>
+
+  </div>
 </body>
 </html>
