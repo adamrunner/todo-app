@@ -1,7 +1,6 @@
 class TodoApp.Routers.TodoItemsRouter extends Backbone.Router
   initialize: (options) ->
     @todos = new TodoApp.Collections.TodoItemsCollection(options.todo_items)
-    # @todos.reset options.todos
   routes:
     "index"    : "index"
     "new"      : "newPost"
